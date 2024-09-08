@@ -2,7 +2,7 @@
 import sgMail from "@sendgrid/mail";
 
 sgMail.setApiKey(
-  "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"
+ 
 );
 
 export default async (req, res) => {
