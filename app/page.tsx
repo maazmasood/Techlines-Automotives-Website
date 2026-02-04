@@ -39,12 +39,15 @@ export default function Home() {
     return () => clearInterval(interval)
   }, [heroImages.length])
 
-  // Stats visibility observer
+  // Stats visibility observer - only trigger once
+  const hasAnimatedRef = useRef(false)
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !hasAnimatedRef.current) {
           setStatsVisible(true)
+          hasAnimatedRef.current = true
+          observer.disconnect() // Stop observing after first trigger
         }
       },
       { threshold: 0.3 }
@@ -149,20 +152,20 @@ export default function Home() {
 
         {/* Hero Content - Two Column Layout */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 md:py-0">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Left Side - Text */}
-              <div className="space-y-6">
-                <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/40 text-primary rounded-full text-sm font-semibold backdrop-blur-sm">
+              <div className="space-y-4 md:space-y-6 text-center md:text-left">
+                <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-primary/20 border border-primary/40 text-primary rounded-full text-xs md:text-sm font-semibold backdrop-blur-sm">
                   ⚡ 20+ Years of Excellence
                 </div>
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   OEM Diagnostic & <span className="text-primary stat-glow">Programming</span>
                 </h1>
-                <p className="text-lg text-foreground/80">
+                <p className="text-base md:text-lg text-foreground/80">
                   Dealer-level diagnostics, coding & retrofits for premium vehicles worldwide.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start">
                   <Button asChild size="lg" className="font-semibold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/30">
                     <Link href="/contact">Get Remote Support</Link>
                   </Button>
@@ -173,19 +176,19 @@ export default function Home() {
               </div>
 
               {/* Right Side - Services Grid */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {[
                   { icon: Wrench, title: 'OEM Diagnostic', desc: 'BMW, Mercedes, Porsche & more' },
                   { icon: Cpu, title: 'ECU Coding', desc: 'Programming & feature activation' },
                   { icon: Settings, title: 'Retrofits', desc: 'CarPlay, audio & infotainment' },
                   { icon: Globe, title: '24/7 Remote', desc: 'Instant global support' }
                 ].map((item, idx) => (
-                  <div key={idx} className="p-5 bg-card/60 backdrop-blur-md rounded-xl border border-primary/20 hover:border-primary/50 transition-all group">
-                    <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-3 group-hover:bg-primary/30 transition-colors">
-                      <item.icon className="w-5 h-5 text-primary" />
+                  <div key={idx} className="p-3 md:p-5 bg-card/60 backdrop-blur-md rounded-xl border border-primary/20 hover:border-primary/50 transition-all group">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-2 md:mb-3 group-hover:bg-primary/30 transition-colors">
+                      <item.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                     </div>
-                    <h3 className="font-bold text-primary mb-1">{item.title}</h3>
-                    <p className="text-sm text-foreground/60">{item.desc}</p>
+                    <h3 className="font-bold text-primary text-sm md:text-base mb-0.5 md:mb-1">{item.title}</h3>
+                    <p className="text-xs md:text-sm text-foreground/60">{item.desc}</p>
                   </div>
                 ))}
               </div>
