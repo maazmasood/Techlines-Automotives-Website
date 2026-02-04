@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
-import { Menu, X, ChevronRight, Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Menu, X, ChevronRight, Phone, Mail, Clock, Car, Globe, Headphones } from 'lucide-react'
 import { useState, FormEvent, ChangeEvent } from 'react'
 
 interface FormData {
@@ -47,18 +47,20 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-primary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="font-bold text-xl text-primary">
+            <Link href="/" className="font-bold text-xl text-primary flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <Car className="w-5 h-5 text-primary-foreground" />
+              </div>
               TechLine Automotives
             </Link>
 
             <div className="hidden md:flex items-center gap-8">
-              <Link href="/#services" className="text-sm hover:text-primary transition-colors">Services</Link>
-              <Link href="/services" className="text-sm hover:text-primary transition-colors">Products</Link>
+              <Link href="/services" className="text-sm hover:text-primary transition-colors">Services</Link>
               <Link href="/contact" className="text-sm hover:text-primary transition-colors">Contact</Link>
-              <Button asChild variant="default" size="sm">
+              <Button asChild variant="default" size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
                 <Link href="/contact">Get Support</Link>
               </Button>
             </div>
@@ -72,11 +74,10 @@ export default function ContactPage() {
           </div>
 
           {isOpen && (
-            <div className="md:hidden pb-4 space-y-4">
-              <Link href="/#services" className="block text-sm hover:text-primary transition-colors">Services</Link>
-              <Link href="/services" className="block text-sm hover:text-primary transition-colors">Products</Link>
+            <div className="md:hidden pb-4 space-y-4 border-t border-primary/20 pt-4">
+              <Link href="/services" className="block text-sm hover:text-primary transition-colors">Services</Link>
               <Link href="/contact" className="block text-sm hover:text-primary transition-colors">Contact</Link>
-              <Button asChild variant="default" className="w-full">
+              <Button asChild variant="default" className="w-full bg-primary text-primary-foreground">
                 <Link href="/contact">Get Support</Link>
               </Button>
             </div>
@@ -85,7 +86,7 @@ export default function ContactPage() {
       </nav>
 
       {/* Breadcrumb */}
-      <div className="bg-card border-b border-border">
+      <div className="bg-secondary border-b border-primary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center gap-2 text-sm">
             <Link href="/" className="text-primary hover:text-primary/80">Home</Link>
@@ -96,9 +97,14 @@ export default function ContactPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-background to-primary/10">
+      <section className="py-16 md:py-20 bg-secondary border-b border-primary/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">Get in Touch</h1>
+          <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/40 text-primary rounded-full text-sm font-semibold mb-6">
+            🌍 24/7 Global Support
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
+            Get in <span className="text-primary">Touch</span>
+          </h1>
           <p className="text-xl text-foreground/70 max-w-3xl">
             Have questions about our services? Need technical support? Our expert team is here to help. Reach out today.
           </p>
@@ -108,146 +114,67 @@ export default function ContactPage() {
       {/* Contact Information */}
       <section className="py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="p-8 text-center bg-card border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all group">
               <div className="flex justify-center mb-4">
-                <Phone size={32} className="text-primary" />
+                <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                  <Phone size={32} className="text-primary" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Phone Support</h3>
+              <h3 className="text-xl font-bold mb-2 text-primary">Phone Support</h3>
               <p className="text-foreground/70 mb-4">Call us for immediate assistance</p>
               <a href="tel:+1234567890" className="text-primary font-semibold hover:text-primary/80 transition-colors">
                 +1 (234) 567-890
               </a>
             </Card>
 
-            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+            <Card className="p-8 text-center bg-card border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all group">
               <div className="flex justify-center mb-4">
-                <Mail size={32} className="text-primary" />
+                <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                  <Mail size={32} className="text-primary" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-2">Email Support</h3>
+              <h3 className="text-xl font-bold mb-2 text-primary">Email Support</h3>
               <p className="text-foreground/70 mb-4">Send us your inquiries anytime</p>
-              <a href="mailto:support@techlineautomotives.com" className="text-primary font-semibold hover:text-primary/80 transition-colors">
+              <a href="mailto:support@techlineautomotives.com" className="text-primary font-semibold hover:text-primary/80 transition-colors text-sm">
                 support@techlineautomotives.com
               </a>
             </Card>
 
-
+            <Card className="p-8 text-center bg-card border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all group">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                  <Globe size={32} className="text-primary" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-2 text-primary">Remote Support</h3>
+              <p className="text-foreground/70 mb-4">TeamViewer & AnyDesk support</p>
+              <span className="text-primary font-semibold">Available 24/7</span>
+            </Card>
           </div>
 
-          <Card className="p-8 bg-card border-2 border-primary/20">
+          <Card className="p-8 bg-card border-2 border-primary/30">
             <div className="flex items-start gap-4">
-              <Clock size={24} className="text-accent mt-1 flex-shrink-0" />
+              <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
+                <Clock size={24} className="text-primary" />
+              </div>
               <div>
-                <h3 className="text-lg font-bold mb-2">Business Hours</h3>
+                <h3 className="text-lg font-bold mb-2 text-primary">Business Hours</h3>
                 <p className="text-foreground/70">Monday - Saturday</p>
                 <p className="text-foreground/70">09:00 AM - 05:00 PM</p>
-                <p className="text-accent font-semibold mt-3">24/7 Remote Support Available</p>
+                <p className="text-primary font-semibold mt-3 flex items-center gap-2">
+                  <Headphones size={16} /> 24/7 Remote Support Available
+                </p>
               </div>
             </div>
           </Card>
         </div>
       </section>
 
-      {/* Contact Form 
-      <section className="py-16 md:py-24 bg-card border-y border-border">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-8 text-center">Send Us a Message</h2>
-
-          {submitted && (
-            <Card className="p-6 mb-8 bg-accent/10 border-accent">
-              <p className="text-center text-foreground">
-                ✓ Thank you for your message! We'll get back to you within 24 hours.
-              </p>
-            </Card>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-semibold mb-2">Full Name *</label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="bg-background"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-semibold mb-2">Email Address *</label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="bg-background"
-                />
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="phone" className="block text-sm font-semibold mb-2">Phone Number</label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+1 (000) 000-0000"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="bg-background"
-                />
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-semibold mb-2">Subject *</label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  placeholder="How can we help?"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="bg-background"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-semibold mb-2">Message *</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Tell us more about your inquiry..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                className="w-full px-4 py-2 bg-background text-foreground border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
-
-            <Button type="submit" size="lg" className="w-full font-semibold">
-              Send Message
-            </Button>
-
-            <p className="text-center text-foreground/60 text-sm">
-              We respect your privacy. Your information will never be shared with third parties.
-            </p>
-          </form>
-        </div>
-      </section>
-*/}
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-secondary border-y border-primary/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked <span className="text-primary">Questions</span></h2>
 
           <div className="space-y-6">
             {[
@@ -276,7 +203,7 @@ export default function ContactPage() {
                 a: 'Absolutely. We provide comprehensive training on all diagnostic tools and coding procedures. Contact us for training packages.'
               }
             ].map((item, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+              <Card key={index} className="p-6 bg-card/50 border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all">
                 <h3 className="text-lg font-bold text-primary mb-3">{item.q}</h3>
                 <p className="text-foreground/70">{item.a}</p>
               </Card>
@@ -286,10 +213,16 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-r from-primary to-primary/80">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Need Immediate Assistance?</h2>
-          <p className="text-xl text-white/90 mb-8">
+      <section className="py-20 md:py-28 bg-gradient-to-r from-primary via-primary/90 to-accent relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 1px)',
+            backgroundSize: '30px 30px'
+          }} />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">Need Immediate Assistance?</h2>
+          <p className="text-xl text-primary-foreground/90 mb-8">
             Call our support team or use our live chat for instant help with your automotive diagnostic needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -304,15 +237,20 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
+      <footer className="bg-card border-t border-primary/20 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <h3 className="font-bold text-lg text-primary mb-4">TechLine Automotives</h3>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                  <Car className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <h3 className="font-bold text-lg text-primary">TechLine Automotives</h3>
+              </div>
               <p className="text-foreground/60 text-sm">Professional automotive diagnostic and programming solutions.</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-semibold mb-4 text-primary">Services</h4>
               <ul className="space-y-2 text-sm text-foreground/60">
                 <li><Link href="/services" className="hover:text-primary transition-colors">Diagnostic Tools</Link></li>
                 <li><Link href="/services" className="hover:text-primary transition-colors">Coding Services</Link></li>
@@ -320,7 +258,7 @@ export default function ContactPage() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
+              <h4 className="font-semibold mb-4 text-primary">Company</h4>
               <ul className="space-y-2 text-sm text-foreground/60">
                 <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
                 <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
@@ -328,7 +266,7 @@ export default function ContactPage() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
+              <h4 className="font-semibold mb-4 text-primary">Connect</h4>
               <div className="flex gap-4">
                 <a href="#" className="text-foreground/60 hover:text-primary transition-colors">Facebook</a>
                 <a href="#" className="text-foreground/60 hover:text-primary transition-colors">Instagram</a>
@@ -337,7 +275,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="border-t border-border pt-8">
+          <div className="border-t border-primary/20 pt-8">
             <p className="text-center text-foreground/50 text-sm">
               © 2025 TechLine Automotives. All rights reserved. | Privacy Policy | Terms of Service
             </p>
