@@ -123,7 +123,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-2 text-primary">Phone Support</h3>
               <p className="text-foreground/70 mb-4">Call us for immediate assistance</p>
-              <a href="tel:+13073106871" className="text-primary font-semibold hover:text-primary/80 transition-colors">
+              <a href="https://wa.me/+13073106871" className="text-primary font-semibold hover:text-primary/80 transition-colors">
                 +1 (307) 310-6871
               </a>
             </Card>
