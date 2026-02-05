@@ -123,8 +123,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-2 text-primary">Phone Support</h3>
               <p className="text-foreground/70 mb-4">Call us for immediate assistance</p>
-              <a href="tel:+1234567890" className="text-primary font-semibold hover:text-primary/80 transition-colors">
-                +1 (234) 567-890
+              <a href="tel:+13073106871" className="text-primary font-semibold hover:text-primary/80 transition-colors">
+                +1 (307) 310-6871
               </a>
             </Card>
 
@@ -136,8 +136,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-2 text-primary">Email Support</h3>
               <p className="text-foreground/70 mb-4">Send us your inquiries anytime</p>
-              <a href="mailto:support@techlineautomotives.com" className="text-primary font-semibold hover:text-primary/80 transition-colors text-sm">
-                support@techlineautomotives.com
+              <a href="mailto:Techlineautomotives@gmail.com" className="text-primary font-semibold hover:text-primary/80 transition-colors text-sm">
+                Techlineautomotives@gmail.com
               </a>
             </Card>
 

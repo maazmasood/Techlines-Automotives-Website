@@ -85,7 +85,7 @@ export default function ServicesPage() {
             {/* BMW Services */}
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4 mb-6">
-                <div className="text-5xl">🚙</div>
+                <div className="text-5xl"><img src="/brands/bmw-logo-2020-gray-download.png" className='w-20 h-20' /></div>
                 <div>
                   <h3 className="text-3xl font-bold text-primary mb-2">BMW Solutions</h3>
                   <p className="text-foreground/70">Complete BMW diagnostic and coding ecosystem</p>
@@ -106,7 +106,7 @@ export default function ServicesPage() {
             {/* Mercedes Services */}
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4 mb-6">
-                <div className="text-5xl">🏎️</div>
+                <div className="text-5xl"><img src="/brands/mercedes-logo-15875.png" className='w-20 h-20' alt="" /></div>
                 <div>
                   <h3 className="text-3xl font-bold text-primary mb-2">Mercedes-Benz Solutions</h3>
                   <p className="text-foreground/70">Advanced diagnostics and coding for all Mercedes platforms</p>
@@ -127,7 +127,7 @@ export default function ServicesPage() {
             {/* Tesla Services */}
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4 mb-6">
-                <div className="text-5xl">⚡</div>
+                <div className="text-5xl">  <img src="/brands/tesla-logo-2007-full-download.png" className='w-20 h-20' alt="" /></div>
                 <div>
                   <h3 className="text-3xl font-bold text-primary mb-2">Tesla Solutions</h3>
                   <p className="text-foreground/70">Advanced Tesla diagnostics, configuration, and software services</p>
@@ -148,7 +148,7 @@ export default function ServicesPage() {
             {/* Land Rover Services */}
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4 mb-6">
-                <div className="text-5xl">🛻</div>
+                <div className="text-5xl"><img src="/brands/land-rover.png" className='w-20 h-20' alt="" /></div>
                 <div>
                   <h3 className="text-3xl font-bold text-primary mb-2">Land Rover Solutions</h3>
                   <p className="text-foreground/70">Complete JLR diagnostics, programming, and security solutions</p>
@@ -169,7 +169,7 @@ export default function ServicesPage() {
             {/* Toyota Services */}
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4 mb-6">
-                <div className="text-5xl">🚗</div>
+                <div className="text-5xl"><img src="/brands/toyota-logo-2020-europe-download.png" className='w-20 h-20' alt="" /></div>
                 <div>
                   <h3 className="text-3xl font-bold text-primary mb-2">Toyota Solutions</h3>
                   <p className="text-foreground/70">Professional Toyota & Lexus diagnostics, programming, and security services</p>
@@ -190,7 +190,7 @@ export default function ServicesPage() {
             {/* Porsche Services */}
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4 mb-6">
-                <div className="text-5xl">🏁</div>
+                <div className="text-5xl"><img src="/brands/porsche-logo-2014-full-download.png" className='w-20 h-20' alt="" /></div>
                 <div>
                   <h3 className="text-3xl font-bold text-primary mb-2">Porsche Solutions</h3>
                   <p className="text-foreground/70">Premium Porsche diagnostics and programming</p>
@@ -211,9 +211,9 @@ export default function ServicesPage() {
             {/* JLR Services */}
             <Card className="p-8 bg-card border-2 border-primary/20 hover:border-primary/50 transition-colors">
               <div className="flex items-start gap-4 mb-6">
-                <div className="text-5xl">🛡️</div>
+                <div className="text-5xl"><img src="/brands/jaguar-logo-2021-download.png" className='w-20 h-20' alt="" /></div>
                 <div>
-                  <h3 className="text-3xl font-bold text-primary mb-2">Jaguar & Land Rover Solutions</h3>
+                  <h3 className="text-3xl font-bold text-primary mb-2">Jaguar Solutions</h3>
                   <p className="text-foreground/70">Engineering-level support for JLR vehicles</p>
                 </div>
               </div>
